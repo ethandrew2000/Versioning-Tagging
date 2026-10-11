@@ -9,6 +9,10 @@ def calculate(operation, a, b):
         if b == 0:
             return "Error: Cannot divide by zero"
         return a / b
+    elif operation == 'modulo':
+        if b == 0:
+            return "Error: Cannot calculate modulo by zero"
+        return a % b
     else:
         return "Error: Unsupported operation"
 
@@ -20,3 +24,4 @@ if __name__ == "__main__":
     print(calculate('multiply', 5, 3))   # 15
     print(calculate('divide', 5, 3))     # 1.666...
     print(calculate('divide', 5, 0))     # Error: Cannot divide by zero
+    print(calculate('modulo', 5, 3))     # 2
