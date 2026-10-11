@@ -1,4 +1,5 @@
-def calculate(operation, a, b):
+def calculate(a, b, operation):
+    """Calculate using the new argument order: (left operand, right operand, operation)."""
     if operation == 'add':
         return a + b
     elif operation == 'subtract':
@@ -17,11 +18,11 @@ def calculate(operation, a, b):
         return "Error: Unsupported operation"
 
 
-# Example usage
+# Breaking API change in 2.0.0: operands now come before the operation.
 if __name__ == "__main__":
-    print(calculate('add', 5, 3))        # 8
-    print(calculate('subtract', 5, 3))   # 2
-    print(calculate('multiply', 5, 3))   # 15
-    print(calculate('divide', 5, 3))     # 1.666...
-    print(calculate('divide', 5, 0))     # Error: Cannot divide by zero
-    print(calculate('modulo', 5, 3))     # 2
+    print(calculate(5, 3, 'add'))        # 8
+    print(calculate(5, 3, 'subtract'))   # 2
+    print(calculate(5, 3, 'multiply'))   # 15
+    print(calculate(5, 3, 'divide'))     # 1.666...
+    print(calculate(5, 0, 'divide'))     # Error: Cannot divide by zero
+    print(calculate(5, 3, 'modulo'))     # 2
